@@ -18,28 +18,39 @@
         </p>
         <h2>Форма</h2>
         <form action="#">
-          <label for="surname">Фамилия:</label>
+          <label for="sname">Фамилия:</label>
           <input
             type="text"
-            id="surname"
+            id="sname"
             v-bind:placeholder="placeholderSurname"
             v-model="inputValueSurname"
+            @keypress.enter="addNewNote"
           />
-          <label for="name">Имя:</label>
+          <label for="fname">Имя:</label>
           <input
             type="text"
-            id="name"
+            id="fname"
             v-bind:placeholder="placeholderName"
             v-model="inputValueName"
+            @keypress.enter="addNewNote"
           />
-          <div class="counter">Количество знаков:</div>
-          <button class="btn">Записать</button>
+          <div class="counter">
+            Количество знаков: {{inputValueSurname.length +
+            inputValueName.length}}
+          </div>
+          <button
+            class="btn"
+            v-on:click="addNewNote"
+            v-bind:disabled="isButtonDisabled"
+            v-on:click="addNewNote"
+          >
+            Записать
+          </button>
         </form>
         <hr />
         <h2>Список</h2>
         <ul class="list">
-          <li class="list-item">привет</li>
-          <li class="list-item">привет</li>
+          <li class="list-item"></li>
         </ul>
 
         <div>Список пуст</div>
