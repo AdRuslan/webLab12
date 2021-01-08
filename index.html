@@ -24,7 +24,7 @@
             id="sname"
             v-bind:placeholder="placeholderSurname"
             v-model="inputValueSurname"
-            @keypress.enter="addNewNote"
+            v-on=""
           />
           <label for="fname">Имя:</label>
           <input
@@ -32,11 +32,9 @@
             id="fname"
             v-bind:placeholder="placeholderName"
             v-model="inputValueName"
-            @keypress.enter="addNewNote"
           />
           <div class="counter">
-            Количество знаков: {{inputValueSurname.length +
-            inputValueName.length}}
+            Количество знаков: {{calcCounter()}}
           </div>
           <button
             class="btn"
@@ -49,11 +47,12 @@
         </form>
         <hr />
         <h2>Список</h2>
-        <ul class="list">
-          <li class="list-item"></li>
+        <ul class="list" v-if="notes.length !== 0">
+          <li class="list-item" v-for="(myNote, idx) in notes">
+            {{idx + 1}}. {{ucFirst(myNote)}}
+          </li>
         </ul>
-
-        <div>Список пуст</div>
+        <div v-else>Список пуст</div>
       </div>
     </div>
 

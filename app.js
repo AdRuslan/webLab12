@@ -5,19 +5,31 @@ const App = {
       placeholderName: "Введите имя",
       inputValueSurname: "",
       inputValueName: "",
-      canSend: false,
-      isButtonDisabled: false,
+      counter: 0,
+      isButtonDisabled: true,
       notes: [],
     };
   },
 
-  methodds: {
+  methods: {
     addNewNote() {
       if (this.inputValueName !== "" && this.inputValueSurname !== "") {
-        this.notes.push(this.inputValueName + " " + this.inputValueSurname);
+        this.notes.push(`${this.inputValueSurname} ${this.inputValueName}`);
         this.inputValueName = "";
         this.inputValueSurname = "";
       }
+    },
+
+    ucFirst(item) {
+      return item
+        .split(" ")
+        .map((word) => word[0].toUpperCase() + word.toLowerCase().slice(1))
+        .join(" ");
+    },
+
+    calcCounter() {
+      this.counter = this.inputValueName.length + this.inputValueSurname.length;
+      return this.counter;
     },
   },
 };
