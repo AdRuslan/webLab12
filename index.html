@@ -7,7 +7,7 @@
     <title>Adigamov Ruslan</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="app">
       <div class="card">
         <h1>Список студентов</h1>
         <p>
@@ -19,13 +19,23 @@
         <h2>Форма</h2>
         <form action="#">
           <label for="surname">Фамилия:</label>
-          <input type="text" id="surname" />
+          <input
+            type="text"
+            id="surname"
+            v-bind:placeholder="placeholderSurname"
+            v-model="inputValueSurname"
+          />
           <label for="name">Имя:</label>
-          <input type="text" id="name" />
+          <input
+            type="text"
+            id="name"
+            v-bind:placeholder="placeholderName"
+            v-model="inputValueName"
+          />
           <div class="counter">Количество знаков:</div>
           <button class="btn">Записать</button>
         </form>
-        <hr>
+        <hr />
         <h2>Список</h2>
         <ul class="list">
           <li class="list-item">привет</li>
