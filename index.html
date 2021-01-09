@@ -12,10 +12,14 @@
       <div class="card">
         <h1>Список студентов</h1>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae
-          incidunt, fugit consequatur assumenda itaque dolor adipisci
-          dignissimos sed cum labore nisi ipsa amet laboriosam, eius accusamus
-          nulla, rem iusto dolorem.
+          Vue — это прогрессивный фреймворк для создания пользовательских
+          интерфейсов. В отличие от фреймворков-монолитов, Vue создан пригодным
+          для постепенного внедрения. Его ядро в первую очередь решает задачи
+          уровня представления (view), что упрощает интеграцию с другими
+          библиотеками и существующими проектами. С другой стороны, Vue
+          полностью подходит и для создания сложных одностраничных приложений
+          (SPA, Single-Page Applications), если использовать его совместно с
+          современными инструментами и дополнительными библиотеками.
         </p>
         <h2>Форма</h2>
         <form action="#">
@@ -25,7 +29,7 @@
             id="sname"
             v-bind:placeholder="placeholderSurname"
             v-model="inputValueSurname"
-            v-on=""
+            v-on:input = "isSurnameEmpty"
           />
           <label for="fname">Имя:</label>
           <input
@@ -33,8 +37,9 @@
             id="fname"
             v-bind:placeholder="placeholderName"
             v-model="inputValueName"
+            v-on:input = "isNameEmpty"
           />
-          <div class="counter">Количество знаков: {{calcCounter()}}</div>
+          <div class="counter">Количество знаков: {{countSymbols}}</div>
           <button
             class="btn"
             v-on:click="addNewNote"

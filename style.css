@@ -35,7 +35,7 @@ h2 {
 .btn {
   margin-top: 20px;
   color: #ff0000;
-  width: 20%;
+  width: 10rem;
   border-radius: 99px;
   letter-spacing: 0.05em;
   border: 3px solid #ff0000;
@@ -44,6 +44,8 @@ h2 {
   font-weight: 700;
   background: rgb(255, 255, 255);
   transition: all 0.22s;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #clearBtn {
@@ -51,7 +53,8 @@ h2 {
   border-color: #5900ff;
 }
 
-#clearBtn:hover,.btn:hover {
+#clearBtn:hover,
+.btn:hover {
   color: rgb(0, 255, 0);
   border-color: rgb(0, 255, 0);
   cursor: pointer;
@@ -67,7 +70,7 @@ h2 {
 }
 
 .btn:focus {
-    outline: none;
+  outline: none;
 }
 
 input {
@@ -113,8 +116,8 @@ hr {
 }
 
 .list-item {
-  margin-left: 35% ;
-  width: 30%;
+  margin-left: 35%;
+  width: 20rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;

@@ -5,8 +5,8 @@ const App = {
       placeholderName: "Введите имя",
       inputValueSurname: "",
       inputValueName: "",
-      counter: 0,
-      isButtonDisabled: false,
+      canSend: false,
+      isButtonDisabled: true,
       notes: [],
     };
   },
@@ -23,7 +23,9 @@ const App = {
         this.inputValueSurname = "";
       }
     },
-    
+
+    isSurnameEmpty(event) {},
+
     // не работает с пробелами на конце!
     // cFirstLet(item) {
     //   return item
@@ -32,13 +34,32 @@ const App = {
     //     .join(" ");
     // },
 
-    calcCounter() {
-      this.counter = this.inputValueName.length + this.inputValueSurname.length;
-      return this.counter;
-    },
-
     clearList() {
       this.notes = [];
+    },
+  },
+
+  watch: {
+    inputValueName(value) {
+      if (value.length > 0 && this.inputValueSurname.length > 0) {
+        this.isButtonDisabled = false;
+      } else {
+        this.isButtonDisabled = true;
+      }
+    },
+
+    inputValueSurname(value) {
+      if (value.length > 0 && this.inputValueName.length > 0) {
+        this.isButtonDisabled = false;
+      } else {
+        this.isButtonDisabled = true;
+      }
+    },
+  },
+
+  computed: {
+    countSymbols() {
+      return this.inputValueName.length + this.inputValueSurname.length;
     },
   },
 };
