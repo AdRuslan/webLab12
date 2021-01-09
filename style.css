@@ -46,7 +46,12 @@ h2 {
   transition: all 0.22s;
 }
 
-.btn:hover {
+#clearBtn {
+  color: #5900ff;
+  border-color: #5900ff;
+}
+
+#clearBtn:hover,.btn:hover {
   color: rgb(0, 255, 0);
   border-color: rgb(0, 255, 0);
   cursor: pointer;
