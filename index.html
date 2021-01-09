@@ -16,10 +16,11 @@
           создания использовались: html, css и js фреймворк Vue 3.
           <br /><br />Описание работы с фреймворком: Подключил файлы фреймворка
           из SDN. Создал объект приложения путем передачи в функцию
-          Vue.createApp объекта, в котором определяются используемые
-          данные через параметр data и выполняемые в приложении действия через
-          параметры methods, watch и compute. С помощью директив v-model, v-bind, v-on, v-if,
-          v-else связал элементы веб-страницы с объектом приложения.
+          Vue.createApp объекта, в котором определяются используемые данные
+          через параметр data и выполняемые в приложении действия через
+          параметры methods, watch и compute. С помощью директив v-model,
+          v-bind, v-on, v-if, v-else связал элементы веб-страницы с объектом
+          приложения.
         </p>
         <h2>Форма</h2>
         <form action="#">
@@ -29,7 +30,6 @@
             id="sname"
             v-bind:placeholder="placeholderSurname"
             v-model="inputValueSurname"
-            v-on:input="isSurnameEmpty"
           />
           <label for="fname">Имя:</label>
           <input
@@ -37,14 +37,12 @@
             id="fname"
             v-bind:placeholder="placeholderName"
             v-model="inputValueName"
-            v-on:input="isNameEmpty"
           />
           <div class="counter">Количество знаков: {{countSymbols}}</div>
           <button
             class="btn"
             v-on:click="addNewNote"
             v-bind:disabled="isButtonDisabled"
-            v-on:click="addNewNote"
           >
             Записать
           </button>
